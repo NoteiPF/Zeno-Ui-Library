@@ -3125,7 +3125,7 @@ function Library:CreateWindow(...)
                 TextXAlignment = Enum.TextXAlignment.Center;
                 TextYAlignment = Enum.TextYAlignment.Top;
                 ZIndex = 5;
-                Parent = BoxInner;
+                Parent = BoxOuter;
             });
 
             local Container = Library:Create('Frame', {
