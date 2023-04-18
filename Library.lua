@@ -2958,7 +2958,7 @@ function Library:CreateWindow(...)
         BorderColor3 = Library.OutlineColor;
         Position = UDim2.new(0, 0, 0, 0);
         Size = UDim2.new(1, -16, 1, -38);
-        ZIndex = 0;
+        ZIndex = 1;
         Parent = MainSectionInner;
     });
 
