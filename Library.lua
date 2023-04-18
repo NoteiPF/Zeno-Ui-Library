@@ -882,7 +882,7 @@ do
         return self;
     end;
 
-    function Funcs:AddKeyPicker(Idx, Info)
+    function Funcs:SetKeyBind(Idx, Info)
         local ParentObj = self;
         local ToggleLabel = self.TextLabel;
         local Container = self.Container;
@@ -893,7 +893,7 @@ do
             Value = Info.Default;
             Toggled = false;
             Mode = 'Toggle';
-            Type = 'SetKeyBind';
+            Type = 'KeyPicker';
             Callback = Info.Callback or function(Value) end;
             ChangedCallback = Info.ChangedCallback or function(New) end;
 
@@ -3383,7 +3383,7 @@ function Library:CreateWindow(...)
     end
 
     Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
-        if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'SetKeyBind' then
+        if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
             if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value then
                 task.spawn(Library.Toggle)
             end
