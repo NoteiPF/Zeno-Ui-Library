@@ -2853,18 +2853,31 @@ function Library:CreateWindow(...)
     };
 
     local Outer = Library:Create('Frame', {
-        BackgroundColor3 = Library.MainColor;
-        BorderColor3 = Library.AccentColor;
-        BorderMode = Enum.BorderMode.Inset;
-        Position = Config.Position;
-        Size = Config.Size;
+        AnchorPoint = Config.AnchorPoint,
+        BackgroundColor3 = Color3.new(0, 0, 0);
+        BorderSizePixel = 1;
+        Transparency = 1;
+        Position = Config.Position,
+        Size = Config.Size,
+        Visible = false;
         ZIndex = 1;
         Parent = ScreenGui;
     });
 
     Library:MakeDraggable(Outer, 25);
 
-    Library:AddToRegistry(Outer, {
+    local Outer = Library:Create('Frame', {
+        BackgroundColor3 = Library.MainColor;
+        BorderColor3 = Library.AccentColor;
+        BorderSizePixel = 0;
+        BorderMode = Enum.BorderMode.Inset;
+        Position = UDim2.new(0, 1, 0, 1);
+        Size = UDim2.new(1, -2, 1, -2);
+        ZIndex = 1;
+        Parent = Outer;
+    });
+
+    Library:AddToRegistry(Inner, {
         BackgroundColor3 = 'MainColor';
         BorderColor3 = 'AccentColor';
     });
@@ -2875,7 +2888,7 @@ function Library:CreateWindow(...)
         Text = Config.Title or '';
         TextXAlignment = Enum.TextXAlignment.Left;
         ZIndex = 1;
-        Parent = Outer;
+        Parent = Inner;
     });
 
     local MainSectionOuter = Library:Create('Frame', {
@@ -2884,7 +2897,7 @@ function Library:CreateWindow(...)
         Position = UDim2.new(0, 8, 0, 25);
         Size = UDim2.new(1, -16, 1, -33);
         ZIndex = 1;
-        Parent = Outer;
+        Parent = Inner;
     });
 
     Library:AddToRegistry(MainSectionOuter, {
