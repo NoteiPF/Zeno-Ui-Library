@@ -3122,7 +3122,8 @@ function Library:CreateWindow(...)
                 Position = UDim2.new(0, 4, 0, 2);
                 TextSize = 14;
                 Text = Info.Name;
-                TextXAlignment = Enum.TextXAlignment.Left;
+                TextXAlignment = Enum.TextXAlignment.Center;
+                TextYAlignment = Enum.TextYAlignment.Top;
                 ZIndex = 5;
                 Parent = BoxInner;
             });
