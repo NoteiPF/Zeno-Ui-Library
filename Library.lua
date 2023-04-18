@@ -2877,6 +2877,7 @@ function Library:CreateWindow(...)
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
         BackgroundColor3 = Color3.new(10, 10, 10);
+        BorderSizePixel = 0;
         Position = Config.Position,
         Size = Config.Size,
         Visible = false;
@@ -2902,7 +2903,7 @@ function Library:CreateWindow(...)
     });
 
     local WindowLabel = Library:CreateLabel({
-        Position = UDim2.new(0, 0, 0, 0);
+        Position = UDim2.new(0, 7, 0, 0);
         Size = UDim2.new(0, 0, 0, 25);
         Text = Config.Title or 'no title';
         TextXAlignment = Enum.TextXAlignment.Left;
