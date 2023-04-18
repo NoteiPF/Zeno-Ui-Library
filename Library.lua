@@ -3093,7 +3093,7 @@ function Library:CreateWindow(...)
             });
 
             local BoxInner = Library:Create('Frame', {
-                BackgroundColor3 = Library.BackgroundColor;
+                BackgroundColor3 = Color3.fromRGB(30,30,30);
                 Size = UDim2.new(1, -2, 1, -2);
                 Position = UDim2.new(0, 1, 0, 1);
                 BorderSizePixel = 0;
