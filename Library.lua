@@ -3077,6 +3077,21 @@ function Library:CreateWindow(...)
         function Tab:AddGroupbox(Info)
             local Groupbox = {};
 
+            local BoxOuter = Library:Create('Frame', {
+                BackgroundColor3 = Library.BackgroundColor;
+                BorderColor3 = Library.OutlineColor;
+                BorderMode = Enum.BorderMode.Inset;
+                Size = UDim2.new(1, 0, 0, 507 + 2);
+                ZIndex = 2;
+                Transparency = 1;
+                Parent = Info.Side == 1 and LeftSide or RightSide;
+            });
+
+            Library:AddToRegistry(BoxOuter, {
+                BackgroundColor3 = 'BackgroundColor';
+                BorderColor3 = 'OutlineColor';
+            });
+
             local BoxInner = Library:Create('Frame', {
                 BackgroundColor3 = Library.BackgroundColor;
                 BorderColor3 = Color3.new(0, 0, 0);
@@ -3084,7 +3099,7 @@ function Library:CreateWindow(...)
                 Size = UDim2.new(1, -2, 1, -2);
                 Position = UDim2.new(0, 1, 0, 1);
                 ZIndex = 4;
-                Parent = Groupbox;
+                Parent = BoxOuter;
             });
 
             Library:AddToRegistry(BoxInner, {
@@ -3110,7 +3125,7 @@ function Library:CreateWindow(...)
                 Text = Info.Name;
                 TextXAlignment = Enum.TextXAlignment.Left;
                 ZIndex = 5;
-                Parent = BoxInner;
+                Parent = BoxOuter;
             });
 
             local Container = Library:Create('Frame', {
