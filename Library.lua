@@ -3123,7 +3123,6 @@ function Library:CreateWindow(...)
                 TextSize = 14;
                 Text = Info.Name;
                 TextXAlignment = Enum.TextXAlignment.Left;
-                TextYAlignment = Enum.TextYAlignment.Top;
                 ZIndex = 5;
                 Parent = BoxOuter;
             });
