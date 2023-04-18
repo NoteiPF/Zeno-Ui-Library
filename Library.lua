@@ -3119,8 +3119,8 @@ function Library:CreateWindow(...)
 
             local GroupboxLabel = Library:CreateLabel({
                 Size = UDim2.new(1, 0, 0, 18);
-                Position = UDim2.new(0, 4, 0, -5);
-                TextSize = 16;
+                Position = UDim2.new(0, 4, 0, -8.5);
+                TextSize = 15;
                 Text = Info.Name;
                 TextXAlignment = Enum.TextXAlignment.Left;
                 ZIndex = 5;
