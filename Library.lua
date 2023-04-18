@@ -2877,7 +2877,6 @@ function Library:CreateWindow(...)
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
         BackgroundColor3 = Color3.new(10, 10, 10);
-        BorderSizePixel = 0;
         Position = Config.Position,
         Size = Config.Size,
         Visible = false;
