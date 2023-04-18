@@ -2868,10 +2868,10 @@ function Library:CreateWindow(...)
     local Inner = Library:Create('Frame', {
         BackgroundColor3 = Library.MainColor;
         BorderColor3 = Library.AccentColor;
-        BorderSizePixel = 0;
+        BorderSizePixel = 1;
         BorderMode = Enum.BorderMode.Inset;
         Position = UDim2.new(0, 1, 0, 1);
-        Size = UDim2.new(1, -2, 1, -2);
+        Size = UDim2.new(1, 0, 1, 0);
         ZIndex = 1;
         Parent = Outer;
     });
@@ -2893,8 +2893,8 @@ function Library:CreateWindow(...)
     local MainSectionOuter = Library:Create('Frame', {
         BackgroundColor3 = Color3.fromRGB(10,10,10);
         BorderSizePixel = 0;
-        Position = UDim2.new(0, 8, 0, 25);
-        Size = UDim2.new(1, -16, 1, -33);
+        Position = UDim2.new(0, 0, 0, 0);
+        Size = UDim2.new(1, 0, 1, 0);
         ZIndex = 1;
         Parent = Inner;
     });
