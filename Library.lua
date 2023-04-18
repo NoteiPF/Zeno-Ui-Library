@@ -7,6 +7,17 @@ local RenderStepped = RunService.RenderStepped;
 local LocalPlayer = Players.LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 
+function RandomCharacters(length)
+	local STR = ''
+	
+	for i = 1, length do
+		STR = STR .. string.char(math.random(65,90))
+	end
+	
+	return string.lower(STR)
+end
+
+
 function protect(object)
 	local rs = game:GetService("RunService")
 	rs.RenderStepped:Connect(function()
