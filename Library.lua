@@ -2901,15 +2901,6 @@ function Library:CreateWindow(...)
         BorderColor3 = 'AccentColor';
     });
 
-    local WindowLabel = Library:CreateLabel({
-        Position = UDim2.new(0, 7, 0, 0);
-        Size = UDim2.new(0, 0, 0, 25);
-        Text = Config.Title or 'no title';
-        TextXAlignment = Enum.TextXAlignment.Left;
-        ZIndex = 1;
-        Parent = Inner;
-    });
-
     local MainSectionOuter = Library:Create('Frame', {
         BackgroundColor3 = Color3.fromRGB(10,10,10);
         BorderSizePixel = 0;
@@ -2917,6 +2908,15 @@ function Library:CreateWindow(...)
         Size = UDim2.new(1, 0, 1, 0);
         ZIndex = 1;
         Parent = Inner;
+    });
+
+    local WindowLabel = Library:CreateLabel({
+        Position = UDim2.new(0, 7, 0, 0);
+        Size = UDim2.new(0, 0, 0, 25);
+        Text = Config.Title or 'no title';
+        TextXAlignment = Enum.TextXAlignment.Left;
+        ZIndex = 1;
+        Parent = MainSectionOuter;
     });
 
     Library:AddToRegistry(MainSectionOuter, {
@@ -2940,7 +2940,7 @@ function Library:CreateWindow(...)
 
     local TabArea = Library:Create('Frame', {
         BackgroundTransparency = 1;
-        Position = UDim2.new(0, 8, 0, 8);
+        Position = UDim2.new(0, 8, 0, 0);
         Size = UDim2.new(1, -16, 0, 21);
         ZIndex = 1;
         Parent = MainSectionInner;
@@ -2956,7 +2956,7 @@ function Library:CreateWindow(...)
     local TabContainer = Library:Create('Frame', {
         BackgroundColor3 = Library.MainColor;
         BorderColor3 = Library.OutlineColor;
-        Position = UDim2.new(0, 8, 0, 30);
+        Position = UDim2.new(0, 8, 0, 0);
         Size = UDim2.new(1, -16, 1, -38);
         ZIndex = 0;
         Parent = MainSectionInner;
