@@ -2855,8 +2855,7 @@ function Library:CreateWindow(...)
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
         BackgroundColor3 = Color3.new(0, 0, 0);
-        BorderSizePixel = 1;
-        Transparency = 1;
+        BorderSizePixel = 0;
         Position = Config.Position,
         Size = Config.Size,
         Visible = false;
@@ -2939,7 +2938,7 @@ function Library:CreateWindow(...)
         BorderColor3 = Library.OutlineColor;
         Position = UDim2.new(0, 8, 0, 30);
         Size = UDim2.new(1, -16, 1, -38);
-        ZIndex = 2;
+        ZIndex = 0;
         Parent = MainSectionInner;
     });
 
