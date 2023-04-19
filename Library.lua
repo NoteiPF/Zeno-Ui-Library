@@ -43,6 +43,7 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
 
 local Library = {
+    FontColor = Color3.new(255,255,255)
     Font = Enum.Font.Code,
 
     Signals = {};
@@ -107,6 +108,18 @@ function Library:Create(Class, Properties)
     end;
 
     return _Instance;
+end;
+
+function Library:CreateLabel(Properties, IsHud)
+    local _Instance = Library:Create('TextLabel', {
+        BackgroundTransparency = 1;
+        Font = Library.Font;
+        TextColor3 = Library.FontColor;
+        TextSize = 16;
+        TextStrokeTransparency = 0;
+    });
+
+    return Library:Create(_Instance, Properties);
 end;
 
 function Library:CreateWindow(...)
