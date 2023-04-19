@@ -2956,9 +2956,10 @@ function Library:CreateWindow(...)
     });
 
     local TabContainer = Library:Create('Frame', {
+        AnchorPoint = UDim2.new(0.5,0.5)
         BackgroundColor3 = Library.MainColor;
         BorderSizePixel = 0;
-        Position = UDim2.new(0, 0, 0, 30);
+        Position = UDim2.new(0.5, 0, 0.5, 0);
         Size = UDim2.new(1, -16, 1, -38);
         ZIndex = 1;
         Parent = MainSectionInner;
