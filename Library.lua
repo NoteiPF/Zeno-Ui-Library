@@ -95,6 +95,20 @@ function Library:GetTextBounds(Text, Font, Size, Resolution)
     return Bounds.X, Bounds.Y
 end;
 
+function Library:Create(Class, Properties)
+    local _Instance = Class;
+
+    if type(Class) == 'string' then
+        _Instance = Instance.new(Class);
+    end;
+
+    for Property, Value in next, Properties do
+        _Instance[Property] = Value;
+    end;
+
+    return _Instance;
+end;
+
 function Library:CreateWindow(...)
     local Config = { AnchorPoint = Vector2.zero }
 
