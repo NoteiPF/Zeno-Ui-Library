@@ -2925,10 +2925,11 @@ function Library:CreateWindow(...)
     });
 
     local MainSectionInner = Library:Create('Frame', {
+        AnchorPoint = UDim2.new(0.5,0.5)
         BackgroundColor3 = Library.BackgroundColor;
         BorderColor3 = Color3.new(0, 0, 0);
         BorderMode = Enum.BorderMode.Inset;
-        Position = UDim2.new(0, 0, 0, 0);
+        Position = UDim2.new(0.5, 0, 0.5, 0);
         Size = UDim2.new(1, 0, 1, 0);
         ZIndex = 1;
         Parent = MainSectionOuter;
