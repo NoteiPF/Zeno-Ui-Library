@@ -1,4 +1,4 @@
-repeat task.wait(1) until game:IsLoaded()
+repeat task.wait() until game:IsLoaded()
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local CoreGui = game:GetService('CoreGui');
